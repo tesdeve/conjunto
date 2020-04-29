@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personable:</strong>
+  <%= @persondetail.personable_id %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @persondetail.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @persondetail.apellido %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @persondetail.edad %>
+</p>
+
+<p>
+  <strong>Cedula:</strong>
+  <%= @persondetail.cedula %>
+</p>
+
+<p>
+  <strong>Huella digital:</strong>
+  <%= @persondetail.huella_digital %>
+</p>
+
+<%= link_to 'Edit', edit_persondetail_path(@persondetail) %> |
+<%= link_to 'Back', persondetails_path %>

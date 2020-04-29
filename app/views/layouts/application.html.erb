@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <%= render 'layouts/alerts' %>
-    <%= yield %>
+    <div class="container">  
+      <%= render 'layouts/alerts' %>
+      <div class="top">  
+        <%= link_to 'Home', root_path %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
