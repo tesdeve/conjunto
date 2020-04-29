@@ -1,0 +1,8 @@
+<h3 class='text-center'>Editing Property <%= @property.identifier %></h3>
+
+<%= render 'form', property: @property %>
+
+<div class="mb-5">  
+	<%= link_to 'Show', @property %> |
+	<%= link_to 'Back', properties_path %>
+</div>

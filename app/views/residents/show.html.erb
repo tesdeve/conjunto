@@ -1,0 +1,19 @@
+<div class="card ">
+  <div class="card-body">
+    <h5 class="card-title text-center mb-4">Informacion de Usuario <%= @property.user_id %></h5>
+
+	  <p>
+		  <strong>Principal:</strong>
+		  <%= @resident.principal.to_s.capitalize %>
+		</p>
+
+		<p>
+		  <strong>Propiedad No:</strong>
+		  <%= @resident.property_id %>
+		</p>
+
+<%= link_to 'Edit', edit_property_resident_path(@property, @resident) %> |
+<%= link_to 'Back', property_residents_path(@property) %>
+
+</div>
+</div>

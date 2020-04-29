@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
+
   root 'pages#home'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :persondetails
+  
+  resources :properties do 
+    resources :residents 
+  end
 end
+
+
+#resources :properties do 
+#    resources :residents do 
+#      #resources :persondetails, module: :residents
+#    end
+#  end
