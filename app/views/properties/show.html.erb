@@ -7,13 +7,18 @@
 			  <strong>Usuario:</strong>
 			  <%= @property.user_id %>
 			</p>
+
+			<p>
+			  <strong>Group:</strong>
+			  <%= @property.group_id %>
+			</p>
 			<p>
 			  <strong>Residents:</strong>
-			  <%= link_to 'Residents', property_residents_path(@property) %>
+			  <%= link_to 'Residentes', property_residents_path(@property) %>
 			</p>
 
-			<%= link_to 'Edit', edit_property_path(@property) %> |
-			<%= link_to 'Back', properties_path %>
+			<%= link_to 'Editar', edit_group_property_path(@group, @property) %>  |
+			<%= link_to 'Propiedades', group_properties_path(@group) %>
 
 		</div>
 	</div>

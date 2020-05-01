@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Principal</th>
-      <th>Property</th>
+      <th>Número</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +15,10 @@
     <% @residents.each do |resident| %>
       <tr>
         <td><%= resident.principal.to_s.capitalize  %></td>
-        <td><%= resident.property_id %></td>
-        <td><%= link_to 'Show', property_resident_path(@property, resident) %></td>
-        <td><%= link_to 'Edit', edit_property_resident_path(@property, resident) %></td>
-        <td><%= link_to 'Destroy', property_resident_path(@property, resident), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= resident.property.identifier %></td>
+        <td><%= link_to 'Ver', property_resident_path(@property, resident) %></td>
+        <td><%= link_to 'Editar', edit_property_resident_path(@property, resident) %></td>
+        <td><%= link_to 'Borrar', property_resident_path(@property, resident), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,6 +30,6 @@
 <br>
 
 <div class="mb-5"> 
-  <%= link_to 'New Resident', new_property_resident_path %> | 
-  <%= link_to 'Show Property', @property %>
+  <%= link_to 'Nuevo Residente', new_property_resident_path %> | 
+  <%= link_to 'Ver Propiedad', group_property_path(@group, @property)%>
 </div>

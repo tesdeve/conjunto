@@ -1,0 +1,13 @@
+<% if current_user.admin %>
+
+	<h1>New Group</h1>
+
+	<%= render 'form', group: @group %>
+
+	<%= link_to 'Conjuntos', groups_path %>
+
+<% else %>
+
+  Acceso no autorizado 
+
+<% end %>
