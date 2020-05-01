@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_085729) do
+ActiveRecord::Schema.define(version: 2020_04_29_100529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "persondetails", force: :cascade do |t|
     t.string "personable_type", null: false
@@ -33,6 +39,8 @@ ActiveRecord::Schema.define(version: 2020_04_24_085729) do
     t.string "identifier"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "group_id", null: false
+    t.index ["group_id"], name: "index_properties_on_group_id"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_085729) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "properties", "groups"
   add_foreign_key "properties", "users"
   add_foreign_key "residents", "properties"
 end

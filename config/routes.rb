@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
+  #resources :groups
   root 'pages#home'
   devise_for :users
   resources :persondetails
+  
+
+  resources :groups do
+    resources :properties 
+  end
   
   resources :properties do 
     resources :residents 

@@ -1,5 +1,6 @@
 class ResidentsController < ApplicationController  
   before_action :set_property
+  before_action :set_group
   before_action :authenticate_user!
   before_action :set_resident, only: [:show, :edit, :update, :destroy]
 
@@ -58,7 +59,7 @@ class ResidentsController < ApplicationController
   def destroy
     @resident.destroy
     respond_to do |format|
-      format.html { redirect_to property_residents_path(:property_id), notice: 'Resident was successfully destroyed.' }
+      format.html { redirect_to property_residents_path(@property), notice: 'Resident was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +72,11 @@ class ResidentsController < ApplicationController
 
     def set_property
       @property = Property.find(params[:property_id])
+    end
+
+    def set_group
+       @property = Property.find(params[:property_id])
+      @group = @property.group_id
     end
 
     # Only allow a list of trusted parameters through.

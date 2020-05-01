@@ -1,0 +1,28 @@
+<div class="card ">
+  <div class="card-body">
+    <h5 class="card-title text-center mb-4">Informacion de <%= @group.name %></h5>
+   
+		<div class="cardSpaceLeft">   
+			<% if current_user.admin %>
+
+				<p>
+				  <strong>Name:</strong>
+				  <%= @group.name %>
+				</p>
+
+			<div class='mb-4'>  
+				<%= link_to 'Propiedades', group_properties_path(@group) %> 
+			</div>
+			<div>  
+				<%= link_to 'Editar', edit_group_path(@group) %> |
+				<%= link_to 'Conjuntos', groups_path %>
+			</div>
+
+			<% else %>
+
+			  Acceso no autorizado  
+
+			<% end %>
+		</div>
+	</div>
+</div>
